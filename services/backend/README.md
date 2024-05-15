@@ -35,7 +35,7 @@ A simple Todo application built with FastAPI.
 4. Run the app:
 
     ```bash
-    poetry run todo
+    poetry run
     ```
 
 ## API Endpoints
