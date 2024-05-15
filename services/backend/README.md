@@ -21,13 +21,13 @@ A simple Todo application built with FastAPI.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/witelokk/todo.git
+   git clone https://github.com/witelokk-study/trpp-project.git
    ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd todo
+    cd trpp-project/services/backend/todo
     ```
 
 3. Set up the environment variables: `POSTGRES_USERNAME`, `POSTGRES_PASSWORD`, `POSTGRES_HOST`, `POSTGRES_PORT`, `SECRET_KEY`
