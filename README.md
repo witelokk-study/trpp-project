@@ -1,47 +1,43 @@
 # Task management app
 
-An app to manage your tasks.
+Приложение для управления задачами.
 
-- Backend built with [Python](https://www.python.org/) and [FastAPI](https://fastapi.tiangolo.com/)
-- Frontend built with [SvelteKit](https://kit.svelte.dev/)
-- Database: [PostgreSQL](https://www.postgresql.org/)
-- Containerized with [Docker](https://www.docker.com/)
-- Orchestrated with [Docker Compose](https://docs.docker.com/compose/)
-- CI/CD with [GitHub Actions](https://github.com/features/actions)
+- Бэкенд написан на [Python](https://www.python.org/) и [FastAPI](https://fastapi.tiangolo.com/)
+- Фронтенд написан на [SvelteKit](https://kit.svelte.dev/)
+- База данных: [PostgreSQL](https://www.postgresql.org/)
+- Контейнеризован с помощью докера [Docker](https://www.docker.com/)
+- Оркестрирован при помощи [Docker Compose](https://docs.docker.com/compose/)
+- CI/CD при помощи [GitHub Actions](https://github.com/features/actions)
 
-## Developing
+## Разработка
 
-### Backend
+### Бэкенд
 
-Check the [README](services/backend/README.md) for instructions on how to develop the backend.
+Ознакомьтесь с [README](services/backend/README.md) для получения инструкций по разработке бэкэнда.
 
-### Frontend
+### Фронтенд
 
-Check the [README](services/frontend/README.md) for instructions on how to develop the frontend.
+Ознакомьтесь с [README](services/frontend/README.md) для получения инструкций по разработке фронтенда.
 
-## Building
+## Сборка
 
-To build the app, run:
+Чтобы собрать приложение, выполните:
 
 ```bash
 docker-compose build
 ```
 
-## Running
+## Запуск
 
-To run the app, run:
+Чтобы запустить приложение, выполните:
 
 ```bash
 docker-compose up
 ```
 
-The app will be available at [http://localhost:3000](http://localhost:3000).
+Приложение будет доступно на [http://localhost:3000](http://localhost:3000).
 
-<!-- ## License
-
-This project is licensed under the terms of the MIT license. -->
-
-## Authors
+## Разработчики
 
 - [witelokk](https://github.com/witelokk)
 - [benzlokzik](https://github.com/benzlokzik)
