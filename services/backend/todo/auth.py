@@ -35,6 +35,9 @@ class Token(BaseModel):
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 def create_user(db: db_dependency, create_user_request: CreateUserRequest):
+    """
+    Add a new user.
+    """
     if db.query(models.User).filter_by(username=create_user_request.username).count():
         raise HTTPException(
             status.HTTP_409_CONFLICT,
@@ -54,6 +57,9 @@ def create_user(db: db_dependency, create_user_request: CreateUserRequest):
 def get_token(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: db_dependency
 ):
+    """
+    Retrieve a token for authentication.
+    """
     user = authenticate_user(form_data.username, form_data.password, db)
 
     if not user:

@@ -47,6 +47,9 @@ class Task(BaseModel):
 def add_task(
     user: user_dependency, db: db_dependency, create_task_request: CreateTaskRequest
 ) -> Task:
+    """
+    Add a new task.
+    """
     if (
         db.query(models.Category).filter_by(id=create_task_request.category_id).first()
         is None
@@ -70,13 +73,20 @@ def add_task(
 
 @router.get("/")
 def get_tasks(user: user_dependency, db: db_dependency) -> list[Task]:
-    tasks = db.query(models.Task).filter_by(user_id=user["id"]).all()
+    """
+    Retrieve a list of tasks.
+    """
 
+    tasks = db.query(models.Task).filter_by(user_id=user["id"]).all()
     return [Task.from_db(task) for task in tasks]
 
 
 @router.get("/{task_id}")
 def get_task(user: user_dependency, db: db_dependency, task_id: str = None) -> Task:
+    """
+    Retrieve a task.
+    """
+
     task = db.query(models.Task).filter_by(user_id=user["id"], id=task_id).first()
 
     if task:
@@ -89,6 +99,9 @@ def get_task(user: user_dependency, db: db_dependency, task_id: str = None) -> T
 def get_tasks_by_category(
     user: user_dependency, db: db_dependency, category_id: str = None
 ) -> list[Task]:
+    """
+    Retrieve a list of tasks by category.
+    """
     tasks = (
         db.query(models.Task)
         .filter_by(user_id=user["id"], category_id=category_id)
@@ -104,6 +117,10 @@ def edit_task(
     task_id: int,
     patch_task_request: PatchTaskRequest,
 ) -> None:
+    """
+    Modify a task.
+    """
+
     task = db.query(models.Task).filter_by(id=task_id, user_id=user["id"]).first()
 
     if not task:
@@ -121,6 +138,9 @@ def edit_task(
 
 @router.delete("/{task_id}")
 def delete_task(user: user_dependency, db: db_dependency, task_id: str = None) -> None:
+    """
+    Delete a task.
+    """
     task = db.query(models.Task).filter_by(user_id=user["id"], id=task_id).first()
 
     if task:

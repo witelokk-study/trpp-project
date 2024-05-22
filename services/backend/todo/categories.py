@@ -36,6 +36,9 @@ def add_category(
     db: db_dependency,
     create_category_request: CreateCategoryRequest,
 ) -> Category:
+    """
+    Add a new category.
+    """
     category = models.Category(user_id=user["id"], name=create_category_request.name)
     db.add(category)
     db.commit()
@@ -45,6 +48,9 @@ def add_category(
 
 @router.get("/")
 def get_categories(user: user_dependency, db: db_dependency) -> list[Category]:
+    """
+    Retrieve a list of availiable categories.
+    """
     categories = db.query(models.Category).filter_by(user_id=user["id"]).all()
     return [Category.from_db(category) for category in categories]
 
@@ -53,6 +59,9 @@ def get_categories(user: user_dependency, db: db_dependency) -> list[Category]:
 def get_category(
     user: user_dependency, db: db_dependency, category_id: int
 ) -> Category:
+    """
+    Retrieve a category.
+    """
     category = (
         db.query(models.Category).filter_by(user_id=user["id"], id=category_id).first()
     )
@@ -70,6 +79,9 @@ def edit_category(
     category_id: int,
     patch_category_request: PatchCategoryRequest,
 ):
+    """
+    Modify a category.
+    """
     category = (
         db.query(models.Category).filter_by(user_id=user["id"], id=category_id).first()
     )
@@ -88,6 +100,9 @@ def delete_category(
     db: db_dependency,
     category_id: int,
 ):
+    """
+    Delete a category.
+    """
     category = (
         db.query(models.Category).filter_by(user_id=user["id"], id=category_id).first()
     )
