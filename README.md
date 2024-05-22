@@ -1,6 +1,6 @@
-# Todo app
+# Task management app
 
-A simple todo app
+An app to manage your tasks.
 
 - Backend built with [Python](https://www.python.org/) and [FastAPI](https://fastapi.tiangolo.com/)
 - Frontend built with [SvelteKit](https://kit.svelte.dev/)
