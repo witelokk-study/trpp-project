@@ -1,57 +1,56 @@
-# Todo FastAPI App
+# Task management app FastAPI App
 
-A simple Todo application built with FastAPI.
+REST API для сервиса управления задачами.
 
-## Features
+## Фичи
 
-- JWT Authentication: Implements JWT (JSON Web Tokens) authentication for secure user authentication and authorization.
+- Аутентификация JWT: используется JWT (JSON Web Token) аутентификация для безопасной аутентификации и авторизации пользователей.
 
-- Task Management with Categories: Allows users to create tasks organized by categories for better organization and management.
+- Управление задачами с категориями: пользователи могут создавать задачи и распределять их по категориям для лучшей организации и управления.
 
-- CRUD Operations: Enables users to perform Create, Read, Update, and Delete operations on tasks and categories.
+- CRUD-операции: пользователи могут выполнять операции создания, чтения, обновления и удаления задач и категорий.
 
+## Требования
 
-## Requirements
-
-- Python 3.10+
+- Python 3.11+
 - Poetry
 
-## Installation
+## Установка
 
-1. Clone this repository:
+1. Склонируйте этот репозиторий:
 
-   ```bash
-   git clone https://github.com/witelokk-study/trpp-project.git
-   ```
+```bash
+git clone https://github.com/witelokk-study/trpp-project.git
+```
 
-2. Navigate to the project directory:
+2. Перейдите в каталог проекта:
 
-    ```bash
-    cd trpp-project/services/backend/todo
-    ```
+```bash
+cd trpp-project/services/backend/todo
+```
 
-3. Set up the environment variables: `POSTGRES_USERNAME`, `POSTGRES_PASSWORD`, `POSTGRES_HOST`, `POSTGRES_PORT`, `SECRET_KEY`
+3. Установите переменные окружения `POSTGRES_USERNAME`, `POSTGRES_PASSWORD`, `POSTGRES_HOST`, `POSTGRES_PORT`, `SECRET_KEY` в файле `.env` (пример `.env.example`).
 
-4. Run the app:
+4. Запустите приложение:
 
-    ```bash
-    poetry run
-    ```
+ ```bash
+ poetry run python todo.main:app
+ ```
 
-## API Endpoints
+## API Эндпоинты
 
-- `POST /auth/`: Create User
-- `POST /auth/token`: Get Token
-- `GET /tasks/`: Get Tasks
-- `POST /tasks/`: Add Task
-- `GET /tasks/{task_id}`: Get Task
-- `PATCH /tasks/{task_id}`: Edit Task
-- `DELETE /tasks/{task_id}`: Delete Task
-- `GET /tasks/category/{category_id}`: Get Tasks By Category
-- `GET /categories`: Get Categories
-- `POST /categories`: Add Category
-- `GET /categories/{category_id}`: Get Category
-- `PATCH /categories/{category_id}`: Edit Category
-- `DELETE /categories/{category_id}`: Delete Category
+- `POST /auth/`: Создание пользователя
+- `POST /auth/token`: Получение токена
+- `GET /tasks/`: Получение списка задач
+- `POST /tasks/`: Добавления задачи
+- `GET /tasks/{task_id}`: Подлучение задачи
+- `PATCH /tasks/{task_id}`: Редактирование задачи
+- `DELETE /tasks/{task_id}`: Удаление задачи
+- `GET /tasks/category/{category_id}`: Получение задачи по категории
+- `GET /categories`: Получение списка категорий
+- `POST /categories`: Доавбление категории
+- `GET /categories/{category_id}`: Получение категории
+- `PATCH /categories/{category_id}`: Редактирование категории
+- `DELETE /categories/{category_id}`: Удаление категории
 
-You can get more information about these endpoints using docs at /docs.
+Вы можете получить более подробную информацию об этих эндпоинтах, используя документацию по адресу `/docs`.
