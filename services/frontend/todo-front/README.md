@@ -1,10 +1,10 @@
 # Todo-front
 
-Frontend for a todo app.
+Фронтенд для todo-app.
 
-## Developing
+## Разработка
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+После создания проекта и установки зависимостей с помощью `npm install` (или `pnpm install` или `yarn`), запустите сервер разработки:
 
 ```bash
 npm run dev
@@ -13,12 +13,12 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## Сборка
 
-To create a production version of your app:
+Чтобы создать производственную версию приложения:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Вы можете предварительно просмотреть сборку с помощью `npm run preview`.
