@@ -8,7 +8,7 @@
 
 	async function fetchTask() {
 		const token = localStorage.getItem('token');
-		const response = await axios.get(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+		const response = await axios.get(`http://localhost:8000/tasks/${id}`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}
@@ -20,7 +20,7 @@
 
 	async function deleteTask() {
 		const token = localStorage.getItem('token');
-		await axios.delete(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+		await axios.delete(`http://localhost:8000/tasks/${id}`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

@@ -1,14 +1,14 @@
 <script>
 	import axios from 'axios';
-	import { navigate } from 'svelte-routing';
+    import { goto } from '$app/navigation';
 
 	let email = '';
 	let password = '';
 
 	async function register() {
 		try {
-			await axios.post("http://0.0.0.0:8000/auth/", { email, password });
-			navigate('/login');
+			await axios.post("http://localhost:8000/auth/", { username: email, password });
+			goto('/login');
 		} catch (error) {
 			console.error('Registration failed', error);
 		}

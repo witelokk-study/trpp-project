@@ -6,7 +6,7 @@
 
 	async function fetchCategories() {
 		const token = localStorage.getItem('token');
-		const response = await axios.get(`http://0.0.0.0:8000/categories/`, {
+		const response = await axios.get(`http://localhost:8000/categories/`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

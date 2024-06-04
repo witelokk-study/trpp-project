@@ -7,7 +7,7 @@
 
 	async function createCategory() {
 		const token = localStorage.getItem('token');
-		await axios.post(`http://0.0.0.0:8000/categories/`, {
+		await axios.post(`http://localhost:8000/categories/`, {
 			name,
 			description
 		}, {

@@ -1,19 +1,16 @@
 <script>
 	import axios from 'axios';
-	import { navigate } from 'svelte-routing';
-	import { qs } from 'qs';
+    import { goto } from '$app/navigation';
+	import qs from 'qs';
 
 	let email = '';
 	let password = '';
 
 	async function login() {
 		try {
-			const params = new URLSearchParams();
-			params.append('email', email);
-			params.append('password', password);
-			const response = await axios.post("http://0.0.0.0:8000/auth/token", params);
+			const response = await axios.post("http://localhost:8000/auth/token", qs.stringify({username: email, password}));
 			localStorage.setItem('token', response.data.access_token);
-			navigate('/tasks');
+			goto('/tasks');
 		} catch (error) {
 			console.error('Login failed', error);
 		}
