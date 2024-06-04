@@ -8,15 +8,19 @@
 	import CategoryList from './components/Categories/CategoryList.svelte';
 	import CategoryDetail from './components/Categories/CategoryDetail.svelte';
 	import CategoryForm from './components/Categories/CategoryForm.svelte';
+	import Home from './components/Home.svelte';
+
 </script>
 
 <Router>
 	<nav>
+		<Link to="/">Home</Link>
 		<Link to="/login">Login</Link>
 		<Link to="/register">Register</Link>
 		<Link to="/tasks">Tasks</Link>
 		<Link to="/categories">Categories</Link>
 	</nav>
+	<Route path="/" component={Home} />
 	<Route path="/login" component={Login} />
 	<Route path="/register" component={Register} />
 	<Route path="/tasks" component={TaskList} />
