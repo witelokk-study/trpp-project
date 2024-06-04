@@ -1,8 +1,7 @@
-<script>
-	import Home from '../components/Home.svelte';
+<script src="">
+	import Login from '../components/Auth/Login.svelte';
 	import DefaultStyle from '../components/DefaultStyle.svelte';
-
 </script>
 
-<Home />
+<Login />
 <DefaultStyle />

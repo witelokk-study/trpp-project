@@ -1,16 +1,17 @@
 <script>
 	import axios from 'axios';
 	import { navigate } from 'svelte-routing';
+	import { qs } from 'qs';
 
 	let email = '';
 	let password = '';
 
 	async function login() {
 		try {
-			const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/token`, {
-				email,
-				password
-			});
+			const params = new URLSearchParams();
+			params.append('email', email);
+			params.append('password', password);
+			const response = await axios.post("http://0.0.0.0:8000/auth/token", params);
 			localStorage.setItem('token', response.data.access_token);
 			navigate('/tasks');
 		} catch (error) {
@@ -26,6 +27,9 @@
 		<input type="password" bind:value={password} placeholder="Password" />
 		<button type="submit">Login</button>
 	</form>
+	<div>
+		<p>Don't have an account? <a href="/register">Register</a></p>
+	</div>
 </div>
 
 <style>
@@ -39,7 +43,7 @@
     }
 
     input[type='email'], input[type='password'] {
-        width: 100%;
+        width: 97%;
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #855264;

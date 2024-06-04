@@ -7,7 +7,7 @@
 
 	async function fetchCategory() {
 		const token = localStorage.getItem('token');
-		const response = await axios.get(`${import.meta.env.VITE_API_URL}/categories/${id}`, {
+		const response = await axios.get(`http://0.0.0.0:8000/categories/${id}`, {
 			headers: {
 				Authorization: `Bearer ${token}`
 			}

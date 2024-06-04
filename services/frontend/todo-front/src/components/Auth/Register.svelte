@@ -7,7 +7,7 @@
 
 	async function register() {
 		try {
-			await axios.post(`${import.meta.env.VITE_API_URL}/auth/`, { email, password });
+			await axios.post("http://0.0.0.0:8000/auth/", { email, password });
 			navigate('/login');
 		} catch (error) {
 			console.error('Registration failed', error);
@@ -22,6 +22,9 @@
 		<input type="password" bind:value={password} placeholder="Password" />
 		<button type="submit">Register</button>
 	</form>
+	<div>
+		<p>Already have an account? <a href="/login">Login</a></p>
+	</div>
 </div>
 
 <style>
@@ -35,7 +38,7 @@
     }
 
     input[type='email'], input[type='password'] {
-        width: 100%;
+        width: 97%;
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #855264;
